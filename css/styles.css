@@ -42,9 +42,9 @@
     /* Label */
     --label-large-font-size: 1.5rem;
     --label-large-font-weight: 400;
-    /* --label-medium-font-size: 12px;
-    --label-medium-font-weight: 500;
-    --label-small-font-size: 11px;
+    --label-medium-font-size: 1.25rem;
+    --label-medium-font-weight: 400;
+    /* --label-small-font-size: 11px;
     --label-small-font-weight: 500; */
 
     /* Body */
@@ -67,17 +67,80 @@ body, html {
     width: 100%;
 }
 
-.hero-section {
+body {
+    background: linear-gradient(#f5f9ff, #fff9f5);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header {
+    position: fixed;
+    top: var(--spacing-large);
+    left: 0;
+    width: 100vw;
+    min-height: 5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
 
-    background-color: var(--color-on-primary);
+
+.header__nav {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: 0 var(--padding-horizontal-large);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 5rem;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.header__logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+.header__name {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--color-secondary);
+}
+
+.header__menu {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-large)
+}
+
+.header__menu-link {
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    font-weight: var(--label-large-font-weight);
+    font-size: var(--label-medium-font-size);
+    color: var(--color-on-surface);
+}
+
+.hero-section {
+    max-height: 64rem;
+    height: 100vh;
+    width: 100vw;
+    padding-top: calc(5rem + var(--spacing-large));
+    display: flex;
+    justify-content: center;
 }
 
 .hero-section__content {
     max-width: var(--max-width);
-    max-height: 64rem;
-    height: 100vh;
+    width: 100%;
     padding: var(--padding-vertical-large) var(--padding-horizontal-large);
     
     display: flex;
