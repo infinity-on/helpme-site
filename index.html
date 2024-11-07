@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <title>Resolve</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <header class="header">
-        <nav class="header__nav">
+        <nav class="container-max-width header__nav">
             <div class="header__brand">
                 <img class="header__logo" src="assets/proprietary/resolve_logomark.svg" alt="Logomarca da Resolve">
                 <span class="header__name">Resolve</span>
@@ -24,11 +26,13 @@
     </header>
     <main>
         <section id="home" class="hero-section">
-            <div class="hero-section__content">
-                <div class="hero-section__presentation">
-                    <h1 class="hero-section__title">Encontre os melhores profissionais para qualquer trabalho</h1>
-                    <p class="hero-section__description">Descubra prestadores de serviço prontos para atender suas necessidades ou anuncie um trabalho e receba ofertas personalizadas em minutos.</p>
-                    <div class="hero-section__btn">
+            <div class="container-max-width hero-section__container">
+                <div class="hero-section__main">
+                    <div class="hero-section__main-text">
+                        <h1 class="hero-section__title">Encontre os melhores profissionais para qualquer trabalho</h1>
+                        <p class="body-text">Descubra prestadores de serviço prontos para atender suas necessidades ou anuncie um trabalho e receba ofertas personalizadas em minutos.</p>
+                    </div>
+                    <div class="hero-section__btn-container">
                         <a href="#" class="btn btn--blue btn--filled">Encontre o profissional ideal</a>
                         <a href="#" class="btn btn--orange btn--filled">Ofereça seus serviços</a>
                     </div>
@@ -40,45 +44,45 @@
         </section>
 
         <div class="section-divider"></div>
-        
+
         <section id="como-funciona" class="how-it-works">
-            <div class="how-it-works__container">
-                <h2 class="how-it-works__title">Como funciona</h2>
+            <div class="container-max-width how-it-works__container">
+                <h2 class="headline">Como funciona</h2>
                 <div class="how-it-works__main">
                     <div class="how-it-works__img-wrapper">
                         <img class="how-it-works__img" src="assets/third-party/unDraw/undraw_searching_re_3ra9.svg" alt="Procurando por um profissional">
                     </div>
                     <div class="how-it-works__text">
-                        <div class="how-it-works__cards">
-                            <div class="how-it-works__card">
-                                <div class="how-it-works__card-icon-wrapper">
-                                    <img class="how-it-works__card-icon" src="assets/third-party/material-design-icons/person_search.svg" alt="Ícone de busca de profissional">
+                        <div class="how-it-works__card-container">
+                            <div class="card">
+                                <div class="card__icon-wrapper">
+                                    <img class="card__icon" src="assets/third-party/material-design-icons/person_search.svg" alt="Ícone de busca de profissional">
                                 </div>
-                                <div class="how-it-works__card-content">
-                                    <h3 class="how-it-works__card-title">Pesquise ou crie um pedido de serviço</h3>
-                                    <p class="how-it-works__card-description">
+                                <div class="card__content">
+                                    <h3 class="card__title">Pesquise ou crie um pedido de serviço</h3>
+                                    <p class="card__description">
                                         Escolha entre buscar pelo nome ou tipo de serviço e visualizar os perfis disponíveis, ou publique um pedido descrevendo sua necessidade e receba propostas para avaliar.
                                     </p>
                                 </div>
                             </div>
-                            <div class="how-it-works__card">
-                                <div class="how-it-works__card-icon-wrapper">
-                                    <img class="how-it-works__card-icon" src="assets/third-party/material-design-icons/badge.svg" alt="Ícone de perfil com selo">
+                            <div class="card">
+                                <div class="card__icon-wrapper">
+                                    <img class="card__icon" src="assets/third-party/material-design-icons/badge.svg" alt="Ícone de perfil com selo">
                                 </div>
-                                <div class="how-it-works__card-content">
-                                    <h3 class="how-it-works__card-title">Analise perfis e propostas</h3>
-                                    <p class="how-it-works__card-description">
+                                <div class="card__content">
+                                    <h3 class="card__title">Analise perfis e propostas</h3>
+                                    <p class="card__description">
                                         Veja o perfil dos profissionais, confira avaliações de outros clientes e entre em contato direto com quem mais te agradar. Se você publicou um pedido, avalie as propostas recebidas e escolha o melhor profissional.
                                     </p>
                                 </div>
                             </div>
-                            <div class="how-it-works__card">
-                                <div class="how-it-works__card-icon-wrapper">
-                                    <img class="how-it-works__card-icon" src="assets/third-party/material-design-icons/handshake.svg" alt="Ícone de aperto de mão">
+                            <div class="card">
+                                <div class="card__icon-wrapper">
+                                    <img class="card__icon" src="assets/third-party/material-design-icons/handshake.svg" alt="Ícone de aperto de mão">
                                 </div>
-                                <div class="how-it-works__card-content">
-                                    <h3 class="how-it-works__card-title">Negocie e contrate diretamente com o profissional</h3>
-                                    <p class="how-it-works__card-description">
+                                <div class="card__content">
+                                    <h3 class="card__title">Negocie e contrate diretamente com o profissional</h3>
+                                    <p class="card__description">
                                         Nossa plataforma não interfere na negociação ou execução do serviço. Você tem liberdade para negociar diretamente e fechar o acordo da forma que preferir.
                                     </p>
                                 </div>
@@ -94,10 +98,10 @@
 
         <div class="section-divider"></div>
 
-        <section class="offer-services">
-            <div class="offer-services__container">
-                <h2 class="offer-services__title">Ofereça seus serviços</h2>
-                <p class="offer-services__description">Cadastre-se e ofereça seus serviços para pessoas que estão precisando exatamente do que você faz.</p>
+        <section id="ofereca-seus-servicos" class="offer-services">
+            <div class="container-max-width offer-services__container">
+                <h2 class="headline">Ofereça seus serviços</h2>
+                <p class="body-text">Cadastre-se e ofereça seus serviços para pessoas que estão precisando exatamente do que você faz.</p>
                 <div class="offer-services__card-container">
                     <div class="card">
                         <div class="card__icon-wrapper">
@@ -119,7 +123,7 @@
                     </div>
                     <div class="card">
                         <div class="card__icon-wrapper">
-                            <img class="card__icon" src="assets/third-party/material-design-icons/handshake.svg" alt="Ícone de aperto de mãos representando negociação">
+                            <img class="card__icon" src="assets/third-party/material-design-icons/handshake_FF7700.svg" alt="Ícone de aperto de mãos representando negociação">
                         </div>
                         <div class="card__content">
                             <h3 class="card__title">Negocie direto, sem taxas</h3>
@@ -136,12 +140,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="offer-services__cta">
-                    <p class="offer-services__cta-title">Pronto para começar?</p>
-                    <a href="#" class="btn btn--orange btn--outlined">Ofereça seus serviços</a>
+                <div class="offer-services__layout">
+                    <div class="offer-services__img-container">
+                        <img class="offer-services__img" src="assets/third-party/unDraw/undraw_businessman_re_mlee.svg" alt="Prestador de serviço">
+                    </div>
+                    <div class="offer-services__cta-container">
+                        <p class="offer-services__cta-title">Pronto para começar?</p>
+                        <a href="#" class="btn btn--orange btn--outlined">Ofereça seus serviços</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 </body>
+
 </html>
