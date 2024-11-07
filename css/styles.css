@@ -9,7 +9,9 @@
     --color-surface-gradient-start: #f5f9ff;
     --color-surface-gradient-end: #fff9f5;
     --color-on-surface: #2c2c2c;
-
+    --color-surface-dim: #2c2c2c;
+    --color-on-surface-dim: #ffffff;
+    
     --max-width: 90rem;
 
     --spacing: 1.5rem;
@@ -365,4 +367,18 @@ body {
 .offer-services__cta-title {
     font-size: var(--headline-medium-font-size);
     font-weight: var(--headline-medium-font-weight);
+}
+
+.footer {
+    height: 3rem;
+    background-color: var(--color-surface-dim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__copyright {
+    font-size: var(--body-small-font-size);
+    font-weight: var(--body-small-font-weight);
+    color: var(--color-on-surface-dim);
 }
