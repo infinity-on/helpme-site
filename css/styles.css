@@ -221,6 +221,17 @@ body {
     font-size: var(--label-medium-font-size);
     font-weight: var(--label-medium-font-weight);
     color: var(--color-on-surface);
+    transition: color 0.3s ease;
+}
+
+.header__menu-link:hover {
+    color: var(--color-secondary);
+}
+
+.header__menu-link--disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .hero-section {
