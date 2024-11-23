@@ -55,6 +55,7 @@
         --title-large-font-size: 1.25rem;
         --body-large-font-size: 1.25rem;
         --body-medium-font-size: 1rem;
+        --body-small-font-size: 0.75rem;
     }
 }
 
@@ -453,15 +454,24 @@ body {
 }
 
 .footer {
-    height: 3rem;
     background-color: var(--color-surface-dim);
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.footer__container {
+    padding: 1rem var(--padding-horizontal);
+    display: flex;
+}
+
+@media (max-width: 75rem) {
+    .footer__container {
+        justify-content: center;
+    }
 }
 
 .footer__copyright {
     font-size: var(--body-small-font-size);
     font-weight: var(--body-small-font-weight);
     color: var(--color-on-surface-dim);
+    text-align: center;
 }
