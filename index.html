@@ -16,6 +16,9 @@
                 <img class="header__logo" src="assets/proprietary/resolve_logomark.svg" alt="Logomarca da Resolve">
                 <span class="header__name">Resolve</span>
             </div>
+            <button class="header__menu-toggle" aria-label="Abrir menu" data-menu-toggle>
+                <img class="header__menu-icon" src="assets/third-party/material-design-icons/menu.svg" alt="Ícone de menu">
+            </button>
             <ul class="header__menu">
                 <li class="header__menu-item"><a href="#home" class="header__menu-link">Home</a></li>
                 <li class="header__menu-item"><a href="#como-funciona" class="header__menu-link">Como funciona</a></li>
@@ -31,7 +34,7 @@
                 <div class="hero-section__main">
                     <div class="hero-section__main-text">
                         <h1 class="hero-section__title">Encontre os melhores profissionais para qualquer trabalho</h1>
-                        <p class="body-text">Descubra prestadores de serviço prontos para atender suas necessidades ou anuncie um trabalho e receba ofertas personalizadas em minutos.</p>
+                        <p class="body-text">Descubra prestadores de serviço prontos para atender suas necessidades ou anuncie um trabalho e receba ofertas personalizadas.</p>
                     </div>
                     <div class="hero-section__btn-container">
                         <a href="#" class="btn btn--blue btn--filled">Encontre o profissional ideal</a>
@@ -39,7 +42,7 @@
                     </div>
                 </div>
                 <div class="hero-section__img-container">
-                    <img class="hero-section__img" src="assets/third-party/unDraw/undraw_business_deal_re_up4u.svg" alt="business deal">
+                    <img class="hero-section__img" src="assets/third-party/unDraw/undraw_business_deal_re_up4u.svg" alt="Duas pessoas fazendo um acordo de negócios">
                 </div>
             </div>
         </section>
@@ -49,50 +52,42 @@
         <section id="como-funciona" class="how-it-works">
             <div class="container-max-width how-it-works__container">
                 <h2 class="headline">Como funciona</h2>
-                <div class="how-it-works__main">
+                <div class="how-it-works__content">
                     <div class="how-it-works__img-wrapper">
                         <img class="how-it-works__img" src="assets/third-party/unDraw/undraw_searching_re_3ra9.svg" alt="Procurando por um profissional">
                     </div>
-                    <div class="how-it-works__text">
-                        <div class="how-it-works__card-container">
-                            <div class="card">
+                    <div class="how-it-works__card-container">
+                        <div class="card">
+                            <div class="card__header">
                                 <div class="card__icon-wrapper">
                                     <img class="card__icon" src="assets/third-party/material-design-icons/person_search.svg" alt="Ícone de busca de profissional">
                                 </div>
-                                <div class="card__content">
-                                    <h3 class="card__title">Pesquise ou crie um pedido de serviço</h3>
-                                    <p class="card__description">
-                                        Escolha entre buscar pelo nome ou tipo de serviço e visualizar os perfis disponíveis, ou publique um pedido descrevendo sua necessidade e receba propostas para avaliar.
-                                    </p>
-                                </div>
+                                <h3 class="card__title">Pesquise ou crie um pedido de serviço</h3>
                             </div>
-                            <div class="card">
+                            <p class="card__description">Busque profissionais pelo nome ou tipo de serviço, ou descreva seu problema e receba propostas.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
                                 <div class="card__icon-wrapper">
                                     <img class="card__icon" src="assets/third-party/material-design-icons/badge.svg" alt="Ícone de perfil com selo">
                                 </div>
-                                <div class="card__content">
-                                    <h3 class="card__title">Analise perfis e propostas</h3>
-                                    <p class="card__description">
-                                        Veja o perfil dos profissionais, confira avaliações de outros clientes e entre em contato direto com quem mais te agradar. Se você publicou um pedido, avalie as propostas recebidas e escolha o melhor profissional.
-                                    </p>
-                                </div>
+                                <h3 class="card__title">Analise perfis e propostas</h3>
                             </div>
-                            <div class="card">
+                            <p class="card__description">Veja perfis, avaliações e entre em contato direto com profissionais, pesquisando ou avaliando as propostas recebidas.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card__header">
                                 <div class="card__icon-wrapper">
                                     <img class="card__icon" src="assets/third-party/material-design-icons/handshake.svg" alt="Ícone de aperto de mão">
                                 </div>
-                                <div class="card__content">
-                                    <h3 class="card__title">Negocie e contrate diretamente com o profissional</h3>
-                                    <p class="card__description">
-                                        Nossa plataforma não interfere na negociação ou execução do serviço. Você tem liberdade para negociar diretamente e fechar o acordo da forma que preferir.
-                                    </p>
-                                </div>
+                                <h3 class="card__title">Negocie e contrate diretamente</h3>
                             </div>
-                        </div>
-                        <div class="how-it-works__cta-bnt">
-                            <a href="" class="btn btn--blue btn--outlined">Encontre o profissional ideal</a>
+                            <p class="card__description">Negocie e feche o acordo da forma que preferir, nossa plataforma não interfere na negociação ou execução do serviço.</p>
                         </div>
                     </div>
+                </div>
+                <div class="how-it-works__cta-bnt">
+                    <a href="" class="btn btn--blue btn--outlined">Encontre o profissional ideal</a>
                 </div>
             </div>
         </section>
@@ -102,61 +97,63 @@
         <section id="ofereca-seus-servicos" class="offer-services">
             <div class="container-max-width offer-services__container">
                 <h2 class="headline">Ofereça seus serviços</h2>
-                <p class="body-text">Cadastre-se e ofereça seus serviços para pessoas que estão precisando exatamente do que você faz.</p>
+                <p class="body-text">Cadastre-se e ofereça seus serviços para pessoas que estão precisando do que você faz.</p>
                 <div class="offer-services__card-container">
                     <div class="card">
-                        <div class="card__icon-wrapper">
-                            <img class="card__icon" src="assets/third-party/material-design-icons/groups.svg" alt="Ícone de pessoas conectadas">
-                        </div>
-                        <div class="card__content">
+                        <div class="card__header">
+                            <div class="card__icon-wrapper">
+                                <img class="card__icon" src="assets/third-party/material-design-icons/groups.svg" alt="Ícone de pessoas conectadas">
+                            </div>
                             <h3 class="card__title">Conecte-se com clientes</h3>
-                            <p class="card__description">Encontre clientes próximos ou de outras regiões para ampliar suas oportunidades.</p>
                         </div>
+                        <p class="card__description">Encontre clientes próximos ou de outras regiões para ampliar suas oportunidades.</p>
                     </div>
                     <div class="card">
-                        <div class="card__icon-wrapper">
-                            <img class="card__icon" src="assets/third-party/material-design-icons/send.svg" alt="Ícone de envio de proposta">
+                        <div class="card__header">
+                            <div class="card__icon-wrapper">
+                                <img class="card__icon" src="assets/third-party/material-design-icons/handshake_FF7700.svg" alt="Ícone de aperto de mãos representando negociação">
+                            </div>
+                            <h3 class="card__title">Negocie direto</h3>
                         </div>
-                        <div class="card__content">
+                        <p class="card__description">Sem intermediários: combine prazos e valores diretamente com o cliente.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__header">
+                            <div class="card__icon-wrapper">
+                                <img class="card__icon" src="assets/third-party/material-design-icons/send.svg" alt="Ícone de envio de proposta">
+                            </div>
                             <h3 class="card__title">Envie propostas com facilidade</h3>
-                            <p class="card__description">Responda pedidos rapidamente e aumente suas chances de fechar mais trabalhos.</p>
                         </div>
+                        <p class="card__description">Responda pedidos rapidamente e aumente suas chances de fechar mais trabalhos.</p>
                     </div>
                     <div class="card">
-                        <div class="card__icon-wrapper">
-                            <img class="card__icon" src="assets/third-party/material-design-icons/handshake_FF7700.svg" alt="Ícone de aperto de mãos representando negociação">
-                        </div>
-                        <div class="card__content">
-                            <h3 class="card__title">Negocie direto, sem taxas</h3>
-                            <p class="card__description">Sem intermediários: combine prazos e valores diretamente com o cliente.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__icon-wrapper">
-                            <img class="card__icon" src="assets/third-party/material-design-icons/star.svg" alt="Ícone de estrela simbolizando reputação e avaliações">
-                        </div>
-                        <div class="card__content">
+                        <div class="card__header">
+                            <div class="card__icon-wrapper">
+                                <img class="card__icon" src="assets/third-party/material-design-icons/star.svg" alt="Ícone de estrela simbolizando reputação e avaliações">
+                            </div>
                             <h3 class="card__title">Construa sua reputação</h3>
-                            <p class="card__description">Avaliações positivas ajudam você a atrair ainda mais clientes.</p>
                         </div>
+                        <p class="card__description">Avaliações positivas ajudam você a atrair ainda mais clientes.</p>
                     </div>
                 </div>
-                <div class="offer-services__layout">
-                    <div class="offer-services__img-container">
-                        <img class="offer-services__img" src="assets/third-party/unDraw/undraw_businessman_re_mlee.svg" alt="Prestador de serviço">
-                    </div>
-                    <div class="offer-services__cta-container">
-                        <p class="offer-services__cta-title">Pronto para começar?</p>
-                        <a href="#" class="btn btn--orange btn--outlined">Ofereça seus serviços</a>
-                    </div>
+                <div class="offer-services__cta-container">
+                    <p class="offer-services__cta-title">Pronto para começar?</p>
+                    <a href="#" class="btn btn--orange btn--outlined">Ofereça seus serviços</a>
+                </div>
+                <div class="offer-services__img-container">
+                    <img class="offer-services__img" src="assets/third-party/unDraw/undraw_businessman_re_mlee.svg" alt="Prestador de serviço">
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p class="footer__copyright">© 2024 Resolve. Todos os direitos reservados.</p>
+        <div class="container-max-width footer__container">
+            <p class="footer__copyright">© 2024 Resolve. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
