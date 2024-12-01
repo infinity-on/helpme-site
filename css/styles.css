@@ -230,8 +230,12 @@ body {
 
 .header__name {
     font-family: "Poppins", serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
+    color: var(--color-on-surface);
+}
+
+.header__name-me {
     color: var(--color-secondary);
 }
 

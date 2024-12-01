@@ -1,6 +1,6 @@
-# Resolve - Landing Page
+# helpme - Landing Page
 
-Bem-vindo ao repositório da landing page do **Resolve**.
+Bem-vindo ao repositório da landing page da **helpme**.
 
 ## Licenciamento
 
