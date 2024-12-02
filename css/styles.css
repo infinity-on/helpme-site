@@ -199,11 +199,6 @@ body {
     padding: 1rem;
     width: 100%;
     display: flex;
-    transition: transform 0.3s ease;
-}
-
-.header--hidden {
-    transform: translateY(-100%);
 }
 
 .header__nav {
@@ -214,7 +209,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 2.5rem;
+    border-radius: 2rem;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
 }
 
@@ -279,6 +274,10 @@ body {
 .header__menu-icon {
     height: 2rem;
     width: 2rem;
+}
+
+.header__menu-icon--hide {
+    display: none;
 }
 
 @media (max-width: 75rem) {  
