@@ -4,6 +4,11 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('header--scrolled', window.scrollY > 20);
 }, { passive: true });
 
+/* ── Analytics helper ── */
+function trackEvent(name, params = {}) {
+    if (typeof gtag === 'function') gtag('event', name, params);
+}
+
 /* ── Waitlist form (seção CTA) ── */
 const waitlistForm = document.getElementById('waitlist-form');
 const waitlistSuccess = document.getElementById('waitlist-success');
@@ -11,7 +16,10 @@ const waitlistSuccess = document.getElementById('waitlist-success');
 if (waitlistForm) {
     waitlistForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!waitlistForm.querySelector('input[type="email"]').value) return;
+        const email = waitlistForm.querySelector('input[type="email"]').value;
+        if (!email) return;
+        const role = waitlistForm.querySelector('input[name="role"]:checked')?.value ?? 'cliente';
+        trackEvent('waitlist_submit', { method: 'section', role });
         waitlistForm.hidden = true;
         waitlistSuccess.hidden = false;
     });
@@ -37,6 +45,7 @@ function closeModal() {
 document.querySelectorAll('[data-waitlist-trigger]').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
+        trackEvent('waitlist_open', { source: btn.closest('header') ? 'header' : 'hero' });
         openModal();
     });
 });
@@ -60,6 +69,8 @@ modalForm.addEventListener('submit', (e) => {
     const roleLabel = role === 'profissional' ? 'Prestador de serviços' : 'Cliente';
     const subject = `Lista de espera — ${roleLabel}`;
     const body = `Perfil: ${roleLabel}\nE-mail: ${emailInput.value}`;
+
+    trackEvent('waitlist_submit', { method: 'modal', role });
 
     window.location.href = `mailto:contato@helpme.technology?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 

@@ -25,6 +25,14 @@
     <meta name="twitter:image" content="https://helpme.technology/assets/images/og-image.png">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://helpme.technology/">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5MG3N9SRV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V5MG3N9SRV');
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -52,7 +60,7 @@
                 <li class="header__menu-item"><a href="#como-funciona" class="header__menu-link">Como funciona</a></li>
                 <li class="header__menu-item"><a href="#ofereca-seus-servicos" class="header__menu-link">Para profissionais</a></li>
                 <li class="header__menu-item"><a href="#faq" class="header__menu-link">FAQ</a></li>
-                <li class="header__menu-item header__menu-item--cta"><a href="#lista-de-espera" class="btn btn--filled btn--primary btn--small" data-waitlist-trigger>Lista de espera</a></li>
+                <li class="header__menu-item header__menu-item--cta"><a href="#lista-de-espera" class="btn btn--filled btn--primary btn--small" data-waitlist-trigger>Acesso antecipado</a></li>
             </ul>
         </nav>
     </header>
@@ -234,6 +242,25 @@
                 <h2 class="cta-section__title" data-animate>Acesso antecipado — para clientes e profissionais</h2>
                 <p class="cta-section__subtitle" data-animate data-delay="1">Estamos chegando em breve. Entre na lista de espera e seja um dos primeiros a usar a helpme.</p>
                 <form class="cta-section__form" id="waitlist-form" novalidate data-animate data-delay="2">
+                    <fieldset class="cta-section__role-selector">
+                        <legend class="cta-section__role-legend">O que você quer?</legend>
+                        <div class="cta-section__role-options">
+                            <label class="cta-section__role-option">
+                                <input type="radio" name="role" value="cliente" checked>
+                                <span class="cta-section__role-btn">
+                                    <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                                    Quero contratar
+                                </span>
+                            </label>
+                            <label class="cta-section__role-option">
+                                <input type="radio" name="role" value="profissional">
+                                <span class="cta-section__role-btn">
+                                    <span class="material-symbols-rounded" aria-hidden="true">handyman</span>
+                                    Quero prestar serviços
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
                     <div class="cta-section__form-group">
                         <input
                             class="cta-section__input"
@@ -258,7 +285,7 @@
         <div class="container-max-width footer__container">
             <div class="footer__brand">
                 <img class="footer__logo" src="assets/proprietary/helpme_logomark.svg" alt="Logomarca da helpme">
-                <span class="footer__name">help<span class="footer__name-me">me</span></span>
+                <span class="footer__name">helpme</span>
             </div>
             <!-- <div class="footer__links">
                 <a href="#" class="footer__link">Política de privacidade</a>
