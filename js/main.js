@@ -14,7 +14,7 @@ function trackEvent(name, params = {}) {
  * Apps Script (ver `apps-script/README.md`). Enquanto a URL não estiver
  * configurada, cai no mailto para não perder o cadastro.
  */
-const WAITLIST_ENDPOINT = '';
+const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzqynsmBcRybIvLkkK1dRKclbzhINRYTesJmoTEFbj0SHf44R-I8NsR-YZCck9L0iUzbA/exec';
 const WAITLIST_FALLBACK_EMAIL = 'contato@helpme.technology';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
