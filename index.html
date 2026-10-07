@@ -271,6 +271,10 @@
                             aria-label="Endereço de e-mail para lista de espera">
                         <button type="submit" class="btn btn--cta-primary">Entrar na lista de espera</button>
                     </div>
+                    <div class="visually-hidden" aria-hidden="true">
+                        <label>Não preencha este campo<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                    </div>
+                    <p class="cta-section__form-error" data-waitlist-error role="alert" hidden></p>
                     <p class="cta-section__form-note">Gratuito e sem spam. Cancele quando quiser.</p>
                 </form>
                 <div class="cta-section__success" id="waitlist-success" hidden aria-live="polite">
@@ -332,6 +336,10 @@
                         aria-label="Endereço de e-mail para lista de espera">
                     <button type="submit" class="btn btn--filled btn--primary">Entrar na lista</button>
                 </div>
+                <div class="visually-hidden" aria-hidden="true">
+                    <label>Não preencha este campo<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
+                <p class="modal__form-error" data-waitlist-error role="alert" hidden></p>
                 <p class="modal__form-note">Gratuito e sem spam. Cancele quando quiser.</p>
             </form>
             <div class="modal__success" id="modal-waitlist-success" hidden aria-live="polite">

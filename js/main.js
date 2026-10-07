@@ -9,21 +9,102 @@ function trackEvent(name, params = {}) {
     if (typeof gtag === 'function') gtag('event', name, params);
 }
 
-/* ── Waitlist form (seção CTA) ── */
-const waitlistForm = document.getElementById('waitlist-form');
-const waitlistSuccess = document.getElementById('waitlist-success');
+/* ── Lista de espera ──
+ * Os dois formulários (seção CTA e modal) gravam numa planilha do Google via
+ * Apps Script (ver `apps-script/README.md`). Enquanto a URL não estiver
+ * configurada, cai no mailto para não perder o cadastro.
+ */
+const WAITLIST_ENDPOINT = '';
+const WAITLIST_FALLBACK_EMAIL = 'contato@helpme.technology';
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-if (waitlistForm) {
-    waitlistForm.addEventListener('submit', (e) => {
+function roleLabel(role) {
+    return role === 'profissional' ? 'Prestador de serviços' : 'Cliente';
+}
+
+function openMailtoFallback(email, role) {
+    const subject = `Lista de espera — ${roleLabel(role)}`;
+    const body = `Perfil: ${roleLabel(role)}\nE-mail: ${email}`;
+    window.location.href = `mailto:${WAITLIST_FALLBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+async function postWaitlist({ email, role, source, website }) {
+    // x-www-form-urlencoded é "simple request": sem preflight CORS, que o
+    // Apps Script não responde.
+    const response = await fetch(WAITLIST_ENDPOINT, {
+        method: 'POST',
+        body: new URLSearchParams({ email, role, source, website }),
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const result = await response.json();
+    if (!result.ok) throw new Error(result.error || 'falha ao gravar');
+}
+
+function setupWaitlistForm(form, successEl, source) {
+    if (!form) return;
+    const emailInput = form.querySelector('input[type="email"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const errorEl = form.querySelector('[data-waitlist-error]');
+    const submitLabel = submitBtn.textContent;
+
+    function showError(message) {
+        errorEl.textContent = message;
+        errorEl.hidden = false;
+        emailInput.setAttribute('aria-invalid', 'true');
+    }
+
+    function clearError() {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+        emailInput.removeAttribute('aria-invalid');
+    }
+
+    emailInput.addEventListener('input', clearError);
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = waitlistForm.querySelector('input[type="email"]').value;
-        if (!email) return;
-        const role = waitlistForm.querySelector('input[name="role"]:checked')?.value ?? 'cliente';
-        trackEvent('waitlist_submit', { method: 'section', role });
-        waitlistForm.hidden = true;
-        waitlistSuccess.hidden = false;
+        clearError();
+
+        const email = emailInput.value.trim();
+        if (!EMAIL_PATTERN.test(email)) {
+            showError('Digite um e-mail válido.');
+            emailInput.focus();
+            return;
+        }
+
+        const role = form.querySelector('input[name="role"]:checked')?.value ?? 'cliente';
+        const website = form.querySelector('input[name="website"]')?.value ?? '';
+
+        if (!WAITLIST_ENDPOINT) {
+            trackEvent('waitlist_submit', { method: source, role, channel: 'mailto' });
+            openMailtoFallback(email, role);
+            form.hidden = true;
+            successEl.hidden = false;
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando…';
+        try {
+            await postWaitlist({ email, role, source, website });
+            trackEvent('waitlist_submit', { method: source, role, channel: 'sheets' });
+            form.hidden = true;
+            successEl.hidden = false;
+        } catch (err) {
+            trackEvent('waitlist_error', { method: source });
+            showError('Não conseguimos registrar agora. Tente de novo em instantes.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitLabel;
+        }
     });
 }
+
+setupWaitlistForm(
+    document.getElementById('waitlist-form'),
+    document.getElementById('waitlist-success'),
+    'section',
+);
 
 /* ── Modal de lista de espera ── */
 const modal = document.getElementById('waitlist-modal');
@@ -60,23 +141,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
 });
 
-modalForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailInput = modalForm.querySelector('input[type="email"]');
-    if (!emailInput.value) return;
-
-    const role = modalForm.querySelector('input[name="role"]:checked').value;
-    const roleLabel = role === 'profissional' ? 'Prestador de serviços' : 'Cliente';
-    const subject = `Lista de espera — ${roleLabel}`;
-    const body = `Perfil: ${roleLabel}\nE-mail: ${emailInput.value}`;
-
-    trackEvent('waitlist_submit', { method: 'modal', role });
-
-    window.location.href = `mailto:contato@helpme.technology?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    modalForm.hidden = true;
-    modalSuccess.hidden = false;
-});
+setupWaitlistForm(modalForm, modalSuccess, 'modal');
 
 /* ── Ano dinâmico no footer ── */
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
