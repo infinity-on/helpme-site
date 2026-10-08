@@ -192,3 +192,13 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-badge__icon { font-size: 1rem; }
+
+/* Esconde visualmente sem tirar do DOM (honeypot anti-spam dos formulários) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

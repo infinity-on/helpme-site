@@ -611,6 +611,15 @@
     margin-top: 0.875rem;
 }
 
+.cta-section__form-error {
+    font-size: var(--md-sys-typescale-body-small-size);
+    color: var(--md-sys-color-error-container);
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.cta-section__form-error[hidden] { display: none; }
+
 .cta-section__success {
     display: flex;
     align-items: center;

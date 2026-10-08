@@ -35,6 +35,11 @@
     --md-sys-color-inverse-surface-dim: #1E293B;
     --md-sys-color-inverse-on-surface:  rgba(255, 255, 255, 0.55);
 
+    /* Error (feedback de formulário) */
+    --md-sys-color-error:              #DC2626;
+    --md-sys-color-error-container:    #FEE2E2;
+    --md-sys-color-on-error-container: #B91C1C;
+
     /* ── Shape Tokens (M3 sys) ─────────────────────────────── */
     --md-sys-shape-corner-extra-small: 4px;
     --md-sys-shape-corner-small:       8px;
