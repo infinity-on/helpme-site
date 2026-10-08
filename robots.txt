@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://helpme.site/sitemap.xml
+Sitemap: https://helpme.technology/sitemap.xml

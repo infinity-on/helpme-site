@@ -17,7 +17,7 @@
 
     /* Secondary */
     --md-sys-color-secondary:           #FF7700;
-    --md-sys-color-secondary-dark:      #E06600;
+    --md-sys-color-secondary-dark:      #B85200;
     --md-sys-color-secondary-container: #FFF0E0;
 
     /* Background & Surface */
@@ -34,6 +34,11 @@
     --md-sys-color-inverse-surface:     #0F172A;
     --md-sys-color-inverse-surface-dim: #1E293B;
     --md-sys-color-inverse-on-surface:  rgba(255, 255, 255, 0.55);
+
+    /* Error (feedback de formulário) */
+    --md-sys-color-error:              #DC2626;
+    --md-sys-color-error-container:    #FEE2E2;
+    --md-sys-color-on-error-container: #B91C1C;
 
     /* ── Shape Tokens (M3 sys) ─────────────────────────────── */
     --md-sys-shape-corner-extra-small: 4px;

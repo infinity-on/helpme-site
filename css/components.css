@@ -24,6 +24,11 @@
     text-align: center;
 }
 
+.btn:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+
 .btn:hover  { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
@@ -322,6 +327,15 @@
     text-align: center;
     margin-top: 0.75rem;
 }
+
+.modal__form-error {
+    font-size: var(--md-sys-typescale-body-small-size);
+    color: var(--md-sys-color-on-error-container);
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.modal__form-error[hidden] { display: none; }
 
 .modal__success {
     display: flex;

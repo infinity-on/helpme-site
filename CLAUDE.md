@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Este arquivo orienta o Claude Code (claude.ai/code) ao trabalhar com o código deste repositório.
 
 ## Projeto
 
@@ -10,28 +10,49 @@ Landing page gerada por um sistema multi-agente. A stack final é **HTML/CSS/JS 
 
 ## Design System
 
-Este projeto adota o **Material Design 3 (M3)** como padrão visual e de componentes.
+Base visual: **Material Design 3 (M3)**, tema **light**, neutros na escala **Slate**.
 
-### Diretrizes obrigatórias
+> **Fonte de verdade: `../DESIGN_TOKENS.md` (raiz da plataforma).** Cores,
+> tipografia, shape e espaçamento vivem lá — não inventar paleta nem gerar tokens
+> aqui (ex.: **não** usar o Material Theme Builder para criar uma paleta nova). O
+> arquivo `css/tokens.css` é a **implementação de referência em CSS**: espelha os
+> valores de `DESIGN_TOKENS.md`, não os define. Ao mudar um token, altere no
+> `DESIGN_TOKENS.md` primeiro e propague para os três projetos (`clientapp`,
+> `providerapp`, `helpme-site`) na mesma tarefa. Se `tokens.css` divergir da fonte,
+> trate como **bug de consistência** e alinhe à fonte.
 
-- **Cores:** usar o sistema de color tokens do M3 (Primary, Secondary, Tertiary, Surface, On-*, etc.). Gerar paleta via [Material Theme Builder](https://m3.material.io/theme-builder).
-- **Tipografia:** escala tipográfica do M3 (Display, Headline, Title, Body, Label) com a fonte **Roboto** ou outra Google Font compatível.
-- **Elevação:** usar sombras e surface tones conforme os níveis de elevação do M3 (nível 0 a 5).
-- **Componentes:** seguir as especificações de shape, state layers (hover, focus, pressed) e motion do M3.
+### Diretrizes
+
+- **Cores:** consumir as CSS vars `--md-sys-color-*` definidas em `css/tokens.css`
+  (que espelham `DESIGN_TOKENS.md`). Nunca hardcodar hex nas seções/componentes.
+- **Tipografia:** **Poppins** (Google Fonts, pesos 300–700), alinhada aos apps
+  Flutter; escala tipográfica do M3 (Display, Headline, Title, Body, Label).
+- **Elevação:** usar os tokens `--md-sys-elevation-level*` de `tokens.css`.
+- **Componentes:** seguir shape, state layers (hover, focus, pressed) e motion do M3.
 - **Espaçamento:** grid de 4dp e margens de 16dp/24dp conforme M3.
-- **Bordas:** border-radius conforme shape scale do M3 (Extra Small 4px, Small 8px, Medium 12px, Large 16px, Extra Large 28px, Full).
-- **Botões:** usar os estilos do M3 (Filled, Tonal, Outlined, Text, Elevated) conforme hierarquia de ação.
-- **Ícones:** usar Material Symbols (variante Outlined ou Rounded) via Google Fonts.
+- **Bordas:** usar os tokens `--md-sys-shape-corner-*` (Extra Small 4px, Small 8px,
+  Medium 12px, Large 16px, Extra Large 28px, Full).
+- **Botões:** estilos do M3 (Filled, Tonal, Outlined, Text, Elevated) conforme
+  hierarquia de ação.
+- **Ícones:** **Material Symbols Rounded** via Google Fonts.
 
 ### Referência
 
-- Especificação oficial: https://m3.material.io/
+- Tokens da plataforma: `../DESIGN_TOKENS.md` · espelho CSS: `css/tokens.css`
+- Especificação M3: https://m3.material.io/
 
 ---
 
 ## Agentes
 
 Este projeto usa um pipeline de agentes especializados. Cada agente tem um papel bem definido e recebe o contexto dos agentes anteriores.
+
+> **Os agentes não são validação independente.** São *personas no mesmo contexto*
+> (templates de prompt), não subagentes isolados nem pessoas. Um "QA aprovou" é o
+> mesmo modelo encenando um checklist — não prova que a página funciona. Validação
+> de verdade = abrir a página e conferir responsividade (mobile 320px+ / tablet
+> 768px+ / desktop 1200px+), CTAs visíveis e console sem erro. Para uma segunda
+> opinião realmente independente, usar um subagente isolado (Task).
 
 ### Fluxo padrão
 
@@ -174,3 +195,13 @@ Os arquivos gerados devem ser salvos seguindo a estrutura do projeto:
 - `css/components.css` — botões, cards, chips e outros componentes reutilizáveis
 - `css/sections.css` — header, hero, seções de conteúdo e footer
 - `js/main.js` — JavaScript vanilla
+
+## Quando não souber (antialucinação)
+
+- Token visual (cor, tipografia, shape) que não está no `../DESIGN_TOKENS.md` /
+  `css/tokens.css`: **não invente** nem gere paleta nova — consulte a fonte. Texto
+  de UI é em **pt-br**.
+- Não afirmar que a página "funciona", "é responsiva" ou "está sem erro" sem ter
+  aberto e verificado nesta sessão. Dizer o que foi conferido e o que não foi.
+- Ao citar arquivo, classe CSS ou seção, confirmar que existe antes de recomendar
+  — não derivar de memória.
