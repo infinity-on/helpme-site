@@ -14,9 +14,9 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--md-sys-color-background);
-    color: var(--md-sys-color-on-background);
+    font-family: 'Figtree', sans-serif;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
     overflow-x: clip;
@@ -156,7 +156,7 @@ img { display: block; max-width: 100%; }
 .headline {
     font-size: var(--md-sys-typescale-headline-medium-size);
     font-weight: 600;
-    color: var(--md-sys-color-on-background);
+    color: var(--md-sys-color-on-surface);
     text-align: center;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -184,7 +184,7 @@ img { display: block; max-width: 100%; }
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-primary);
     border-radius: var(--md-sys-shape-corner-full);
-    border: 1px solid rgba(0, 119, 255, 0.18);
+    border: 1px solid rgba(0, 98, 214, 0.18);
     font-size: 0.8125rem;
     font-weight: 600;
     width: fit-content;

@@ -9,36 +9,43 @@
 
 /* Expanded (default) */
 :root {
-    /* ── Color Tokens (M3 sys) ─────────────────────────────── */
-    /* Primary */
-    --md-sys-color-primary:           #0077FF;
-    --md-sys-color-primary-dark:      #0055CC;
-    --md-sys-color-primary-container: #E8F1FF;
+    /* ── Color Tokens (M3 sys) — tema hm, espelho de ../DESIGN_TOKENS.md ── */
+    /* Marca: só no logo. O laranja não é cor de interface. */
+    --brand-logo:            #0077FF;  /* globo do logomark */
+    --brand-wordmark-accent: #FF7700;  /* o "me" do nome */
 
-    /* Secondary */
-    --md-sys-color-secondary:           #FF7700;
-    --md-sys-color-secondary-dark:      #B85200;
-    --md-sys-color-secondary-container: #FFF0E0;
+    /* Primary — azul da interface */
+    --md-sys-color-primary:              #0062D6;
+    --md-sys-color-on-primary:           #FFFFFF;
+    --md-sys-color-primary-container:    #DCE9FF;
+    --md-sys-color-on-primary-container: #001C40;
 
-    /* Background & Surface */
-    --md-sys-color-background:            #FFFFFF;
-    --md-sys-color-surface-container-low: #F8F9FC;
-    --md-sys-color-on-background:         #0F172A;
-    --md-sys-color-on-surface-variant:    #64748B;
+    /* Secondary — menta: verificado, concluído */
+    --md-sys-color-secondary:              #0F7A60;
+    --md-sys-color-secondary-container:    #D3F5EA;
+    --md-sys-color-on-secondary-container: #0B4A3B;
+
+    /* Surface — grafite */
+    --md-sys-color-surface:                #F6F6F7;  /* fundo cinza (seções alternadas) */
+    --md-sys-color-surface-container-low:  #FAFAFB;
+    --md-sys-color-surface-container:      #FFFFFF;  /* página, cards e chips */
+    --md-sys-color-surface-container-high: #EEEFF1;
+    --md-sys-color-on-surface:             #1C1D20;
+    --md-sys-color-on-surface-variant:     #5B5E66;
 
     /* Outline */
-    --md-sys-color-outline-variant: #E2E8F0;
-    --md-sys-color-outline:         #CBD5E1;
+    --md-sys-color-outline:         #C5C7CC;
+    --md-sys-color-outline-variant: #E4E5E8;
 
-    /* Inverse (dark footer) */
-    --md-sys-color-inverse-surface:     #0F172A;
-    --md-sys-color-inverse-surface-dim: #1E293B;
+    /* Inverse (rodapé e CTA escuros) */
+    --md-sys-color-inverse-surface:     #2C2E33;
+    --md-sys-color-inverse-surface-dim: #37393F;
     --md-sys-color-inverse-on-surface:  rgba(255, 255, 255, 0.55);
 
     /* Error (feedback de formulário) */
-    --md-sys-color-error:              #DC2626;
-    --md-sys-color-error-container:    #FEE2E2;
-    --md-sys-color-on-error-container: #B91C1C;
+    --md-sys-color-error:              #B3261E;
+    --md-sys-color-error-container:    #F9DEDC;
+    --md-sys-color-on-error-container: #410E0B;
 
     /* ── Shape Tokens (M3 sys) ─────────────────────────────── */
     --md-sys-shape-corner-extra-small: 4px;
