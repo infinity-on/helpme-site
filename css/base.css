@@ -170,7 +170,7 @@ img { display: block; max-width: 100%; }
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+    background: linear-gradient(135deg, var(--md-sys-color-primary), var(--brand-accent-large));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

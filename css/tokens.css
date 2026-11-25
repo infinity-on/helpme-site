@@ -10,9 +10,15 @@
 /* Expanded (default) */
 :root {
     /* ── Color Tokens (M3 sys) — tema hm, espelho de ../DESIGN_TOKENS.md ── */
-    /* Marca: só no logo. O laranja não é cor de interface. */
+    /* Marca */
     --brand-logo:            #0077FF;  /* globo do logomark */
     --brand-wordmark-accent: #FF7700;  /* o "me" do nome */
+
+    /* Acento de marca (só no site) — laranja; ver "Acento de marca no site" */
+    --brand-accent:           #FF7700;  /* só decoração sem texto (2,66:1) */
+    --brand-accent-large:     #E86C00;  /* texto grande, fim do degradê (3,19:1) */
+    --brand-accent-text:      #B05000;  /* texto e ícones (4,71:1 no container) */
+    --brand-accent-container: #FFF0E0;
 
     /* Primary — azul da interface */
     --md-sys-color-primary:              #0062D6;

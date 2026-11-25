@@ -45,11 +45,11 @@
 .btn--filled.btn--primary:hover { box-shadow: 0 6px 20px rgba(0, 98, 214, 0.45); }
 
 .btn--tonal.btn--secondary {
-    background: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
+    background: var(--brand-accent-container);
+    color: var(--brand-accent-text);
     box-shadow: var(--md-sys-elevation-level1);
 }
-.btn--tonal.btn--secondary:hover { background: color-mix(in srgb, var(--md-sys-color-secondary-container) 85%, var(--md-sys-color-secondary)); box-shadow: var(--md-sys-elevation-level2); }
+.btn--tonal.btn--secondary:hover { background: color-mix(in srgb, var(--brand-accent-container) 85%, var(--brand-accent)); box-shadow: var(--md-sys-elevation-level2); }
 
 .btn--outlined.btn--primary {
     background: transparent;
@@ -100,7 +100,7 @@
 }
 
 .card__icon-wrapper--primary   { background: var(--md-sys-color-primary-container);   color: var(--md-sys-color-primary); }
-.card__icon-wrapper--secondary { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-secondary); }
+.card__icon-wrapper--secondary { background: var(--brand-accent-container); color: var(--brand-accent-text); }
 
 .card__icon { font-size: 1.375rem; }
 
