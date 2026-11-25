@@ -10,7 +10,7 @@ Landing page gerada por um sistema multi-agente. A stack final é **HTML/CSS/JS 
 
 ## Design System
 
-Base visual: **Material Design 3 (M3)**, tema **light**, neutros na escala **Slate**.
+Base visual: **Material Design 3 (M3)**, tema **light**, paleta **hm** (grafite neutro, azul de acento, menta e âmbar de apoio; o laranja fica só no "me" do logo).
 
 > **Fonte de verdade: `../DESIGN_TOKENS.md` (raiz da plataforma).** Cores,
 > tipografia, shape e espaçamento vivem lá — não inventar paleta nem gerar tokens
@@ -25,7 +25,7 @@ Base visual: **Material Design 3 (M3)**, tema **light**, neutros na escala **Sla
 
 - **Cores:** consumir as CSS vars `--md-sys-color-*` definidas em `css/tokens.css`
   (que espelham `DESIGN_TOKENS.md`). Nunca hardcodar hex nas seções/componentes.
-- **Tipografia:** **Poppins** (Google Fonts, pesos 300–700), alinhada aos apps
+- **Tipografia:** **Figtree** (Google Fonts, fonte variável), alinhada aos apps
   Flutter; escala tipográfica do M3 (Display, Headline, Title, Body, Label).
 - **Elevação:** usar os tokens `--md-sys-elevation-level*` de `tokens.css`.
 - **Componentes:** seguir shape, state layers (hover, focus, pressed) e motion do M3.
